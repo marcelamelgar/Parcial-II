@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang = "eng">
-<title>Marcela's LinkedTree</title>
+<title>Web String Handler</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<header class="w3-display-container w3-content w3-center" style="max-width:1500px">
+  <img class="w3-image" src="/static/avatar.png" alt="Me" width="150" height="60">
+ </header>
+
 
 <style>
     html, body {font-family: "Roboto", sans-serif}
 
-    .pill-nav a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-        font-size: 17px;
-        width: 400px;
-        border: 5px;
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
 
-    .pill-nav a:hover {
-        background-color:#9966ff ;
-        color: white;
-    }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 
-    img{
-        border: 200%;
-        margin-top: 3%;
-        width: 100px;
-        height: 300px;
-    }
-
-
+  .container {
+    padding: 2px 16px;
+  }
 </style>
+
 
 <body style = "background-color: white">
     <center>
-    <img src = "{{picture}}" style="width:15%" alt="Avatar"><br>
-    <form>
-        <div class="form-group">
+      <h4><b>Web String Handler</b></h4>
+    <form method= "POST" action = "">
+        <div class="form-group"><br> 
           <label for="exampleInputEmail1">String</label>
-          <input type="text" class="form-control" name = "String"  placeholder="Enter String">
+          <input type="text" class="form-control" name = "String"  placeholder="Enter String"><br>
         </div>
-        <button type="submit" class="btn btn-primary">Handler</button>
+        <br><button type="submit" class="btn btn-primary">Handler</button>
       </form>
     </center>
-  </body>
+</body>
+
+<header>
+  <center>
+    <div class="card"  style="max-width:1000px">
+        <p>
+          <ul class = "list-group">
+          {% for k, v in resultado.items() %}
+            <li class = "list-group-item">
+              <b>{{k}} : </b> {{v}}
+            </li>
+          {% endfor %}
+          </ul>
+        </p>
+      </div>
+    </div>
+  </center>
+</header>
   </html>
